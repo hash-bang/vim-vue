@@ -18,7 +18,16 @@ endfunction
 let s:languages = [
       \   { 'name': 'pug', 'pairs': ['<template', '</template>'] },
       \   { 'name': 'stylus', 'pairs': ['<style', '</style>'] },
+      \   { 'name': 'javascript', 'pairs': ['<component', '</component>'] },
+      \   { 'name': 'javascript', 'pairs': ['<directive', '</directive>'] },
+      \   { 'name': 'javascript', 'pairs': ['<filter', '</filter>'] },
+      \   { 'name': 'javascript', 'pairs': ['<macgyver', '</macgyver>'] },
+      \   { 'name': 'javascript', 'pairs': ['<schema', '</schema>'] },
       \   { 'name': 'javascript', 'pairs': ['<script', '</script>'] },
+      \   { 'name': 'javascript', 'pairs': ['<server', '</server>'] },
+      \   { 'name': 'javascript', 'pairs': ['<service', '</service>'] },
+      \   { 'name': 'css', 'pairs': ['<style', '</style>'] },
+      \   { 'name': 'html', 'pairs': ['<template', '</template>'] },
       \ ]
 
 for s:language in s:languages

@@ -13,9 +13,9 @@ endif
 " ===============================================
 " IMPORT PUG, JS AND STYLUS
 " ===============================================
-syntax include @PUG syntax/pug.vim
+syntax include @CSS syntax/css.vim
+syntax include @HTML syntax/html.vim
 syntax include @JS syntax/javascript.vim
-syntax include @STYL syntax/stylus.vim
 
 " ===============================================
 " MAIN TAGS
@@ -42,12 +42,12 @@ syntax region vueString start=/\('\|"\)/ end=/\('\|"\)/
 
 highlight def link vueString String
 
-syntax match vueKeyword "\(<\/\=\)\@<=\(script\|style\|template\)\>"
+syntax match vueKeyword "\(<\/\=\)\@<=\(component\|directive\|filter\|macgyver\|schema\|script\|server\|service\|style\|template\)\>"
       \ contained
 
 highlight def link vueKeyword ModeMsg
 
-syntax region vueMainTag matchgroup=vueEnclosure start="<\/\=\(script\|style\|template\)\@=" end=">"
+syntax region vueMainTag matchgroup=vueEnclosure start="<\/\=\(component\|directive\|filter\|macgyver\|schema\|script\|server\|service\|style\|template\)\@=" end=">"
       \ contains=vueKeyword,vueOperator,vueString,vueAttribute
       \ keepend
       \ oneline
@@ -56,19 +56,44 @@ syntax region vueMainTag matchgroup=vueEnclosure start="<\/\=\(script\|style\|te
 " DEFINE TEMPLATE, SCRIPT AND STYLE
 " ===============================================
 
-" Template
-syntax region vueTemplate start="<template.\{-}>" end="<\/template>"
-      \ contains=@PUG,vueMainTag,vueInterpolation
+syntax region vueScript start="<component.\{-}>" end="<\/component>"
+      \ contains=@JS,vueMainTag
       \ keepend
 
-" Script
+syntax region vueScript start="<directive.\{-}>" end="<\/directive>"
+      \ contains=@JS,vueMainTag
+      \ keepend
+
+syntax region vueScript start="<filter.\{-}>" end="<\/filter>"
+      \ contains=@JS,vueMainTag
+      \ keepend
+
+syntax region vueScript start="<macgyver.\{-}>" end="<\/macgyver>"
+      \ contains=@JS,vueMainTag
+      \ keepend
+
+syntax region vueScript start="<schema.\{-}>" end="<\/schema>"
+      \ contains=@JS,vueMainTag
+      \ keepend
+
 syntax region vueScript start="<script.\{-}>" end="<\/script>"
       \ contains=@JS,vueMainTag
       \ keepend
 
-" Style
+syntax region vueScript start="<server.\{-}>" end="<\/server>"
+      \ contains=@JS,vueMainTag
+      \ keepend
+
+syntax region vueScript start="<service.\{-}>" end="<\/service>"
+      \ contains=@JS,vueMainTag
+      \ keepend
+
 syntax region vueStyle start="<style.\{-}>" end="<\/style>"
-      \ contains=@STYL,vueMainTag
+      \ contains=@CSS,vueMainTag
+      \ keepend
+
+syntax region vueTemplate start="<template.\{-}>" end="<\/template>"
+      \ contains=@HTML,vueMainTag,vueInterpolation
       \ keepend
 
 " ===============================================
