@@ -41,7 +41,9 @@ endfor
 
 let b:did_indent = 1
 
-setlocal indentexpr=GetVueIndent()
+" Disabled by MC as this really buggers up indenting the way I like it - MC 2019-05-23
+setlocal indentexpr=GetJavascriptIndent
+" setlocal indentexpr=GetVueIndent()
 
 if exists('*GetVueIndent')
   finish
