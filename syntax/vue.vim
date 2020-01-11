@@ -16,6 +16,7 @@ endif
 syntax include @CSS syntax/css.vim
 syntax include @HTML syntax/html.vim
 syntax include @JS syntax/javascript.vim
+syntax include @MARKDOWN syntax/markdown.vim
 
 " ===============================================
 " MAIN TAGS
