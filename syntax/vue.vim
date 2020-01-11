@@ -42,12 +42,12 @@ syntax region vueString start=/\('\|"\)/ end=/\('\|"\)/
 
 highlight def link vueString String
 
-syntax match vueKeyword "\(<\/\=\)\@<=\(component\|directive\|endpoint\|filter\|macgyver\|schema\|script\|server\|service\|style\|template\)\>"
+syntax match vueKeyword "\(<\/\=\)\@<=\(component\|directive\|docs\|endpoint\|filter\|macgyver\|schema\|script\|server\|service\|style\|template\)\>"
       \ contained
 
 highlight def link vueKeyword ModeMsg
 
-syntax region vueMainTag matchgroup=vueEnclosure start="<\/\=\(component\|directive\|endpoint\|filter\|macgyver\|schema\|script\|server\|service\|style\|template\)\@=" end=">"
+syntax region vueMainTag matchgroup=vueEnclosure start="<\/\=\(component\|directive\|docs\|endpoint\|filter\|macgyver\|schema\|script\|server\|service\|style\|template\)\@=" end=">"
       \ contains=vueKeyword,vueOperator,vueString,vueAttribute
       \ keepend
       \ oneline
@@ -62,6 +62,10 @@ syntax region vueScript start="<component.\{-}>" end="<\/component>"
 
 syntax region vueScript start="<directive.\{-}>" end="<\/directive>"
       \ contains=@JS,vueMainTag
+      \ keepend
+
+syntax region vueScript start="<docs.\{-}>" end="<\/docs>"
+      \ contains=@MARKDOWN,vueMainTag
       \ keepend
 
 syntax region vueScript start="<endpoint.\{-}>" end="<\/endpoint>"

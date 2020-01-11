@@ -20,6 +20,7 @@ let s:languages = [
       \   { 'name': 'stylus', 'pairs': ['<style', '</style>'] },
       \   { 'name': 'javascript', 'pairs': ['<component', '</component>'] },
       \   { 'name': 'javascript', 'pairs': ['<directive', '</directive>'] },
+      \   { 'name': 'markdown', 'pairs': ['<docs', '</docs>'] },
       \   { 'name': 'javascript', 'pairs': ['<endpoint', '</endpoint>'] },
       \   { 'name': 'javascript', 'pairs': ['<filter', '</filter>'] },
       \   { 'name': 'javascript', 'pairs': ['<macgyver', '</macgyver>'] },
